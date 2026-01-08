@@ -8,17 +8,17 @@
 * Uses proper HTTP status codes
 * Includes automated tests
 
-🎯 Use Case 
+🎯 Use Case:
 The system allows users to register GitHub repositories into a local PostgreSQL database by fetching real-time data from the GitHub Public API.
 Once stored, repositories can be retrieved, updated, or deleted via REST endpoints.
 chosen because:
-    GitHub API is reliable and public
-    Demonstrates real external API integration
+    * GitHub API is reliable and public
+    * Demonstrates real external API integration
 
-⚠️ Assumptions
+⚠️ Assumptions:
 External API Reliability
-    GitHub Public API is assumed to be available most of the time.
-    If GitHub is unavailable or returns an error, the request fails gracefully.
+    * GitHub Public API is assumed to be available most of the time.
+    * If GitHub is unavailable or returns an error, the request fails gracefully.
 
 
 2. Design Decision
@@ -34,10 +34,11 @@ External API Reliability
 | created_at  | Timestamp    | Audit & tracking  |
 
 Indexing:
-    Primary key index on id
-    Optimized for read-heavy operations (GET by ID)
+    * Primary key index on id
+    * Optimized for read-heavy operations (GET by ID)
 
 🏗 Project Structure
+
 app/
 ├── main.py              # Application entry point
 ├── database.py          # DB engine & session
@@ -50,13 +51,15 @@ tests/
 └── test_repositories.py
 
 ✅ Validation Logic
-Pydantic models enforce:
+
+* Pydantic models enforce:
     Minimum string lengths
     Non-negative numeric values
-response_model ensures output integrity
-Invalid input automatically triggers 422 Unprocessable Entity
+* response_model ensures output integrity
+* Invalid input automatically triggers 422 Unprocessable Entity
 
 🌐 External API Design
+
 External Service: GitHub REST API
 
 
