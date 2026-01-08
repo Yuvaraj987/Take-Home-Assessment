@@ -62,17 +62,17 @@ External Service: GitHub REST API
 
 3. Solution Approach
 
-POST /repositories
+*  POST /repositories
     Client submits GitHub owner & repo name
     API fetches data from GitHub
     Validated data is stored in PostgreSQL
-GET /repositories/{id}
+*  GET /repositories/{id}
     Data fetched directly from PostgreSQL
     Returned using response schema
-PUT /repositories/{id}
+*  PUT /repositories/{id}
     Partial update using validated input
     Changes persisted to DB
-DELETE /repositories/{id}
+*  DELETE /repositories/{id}
     Entity removed from DB
     No content returned
 
